@@ -1,8 +1,9 @@
+
 import os
 import time
-menu=0
+menu = 0
 produtos = [['tomate',25.9] , ['banana',5.9] , ['repolho',2.9]]
-produto =[]
+produto = []
 while menu == 0 :
     os.system('cls')
     menu=int(input('''
