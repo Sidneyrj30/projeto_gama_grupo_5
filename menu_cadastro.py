@@ -35,7 +35,7 @@ while opcao == '0' or opcao != '1234':
                 produto_cadastro = input("Nome invalido digite o nome novamente: ")
             os.system('cls')
             preco = input(f"Digite o preço de {produto_cadastro}: ")       #replace(",", ".")
-            while type(preco) % 0:#preco.isdecimal() == False: #rever logo pela manha
+            while preco.isdecimal() == False:#preco.isdecimal() == False: #rever logo pela manha
                 preco = input(f"Preço invalido digite novamente um preço para {produto_cadastro}: ")
             produto=[]
             produto.append(produto_cadastro)
