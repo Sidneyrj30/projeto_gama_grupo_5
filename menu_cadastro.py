@@ -1,7 +1,7 @@
 import os
-produtos = []
-opcao = '0'
-while opcao == '0' or opcao != '1234':
+produtos = [{'banana':15.9},{'maça':15.5}]
+opcao = '1'
+while opcao != '0':
     os.system('cls')
     opcao=input('''
     --------------------------------------------
@@ -14,7 +14,7 @@ while opcao == '0' or opcao != '1234':
     entre com o numero da solicitação ''')
 
 
-    while opcao == '1' or opcao != '1234':
+    while opcao != '0':
         os.system('cls')
         menu_cadastro=input('''
         --------------------------------------------
@@ -30,6 +30,8 @@ while opcao == '0' or opcao != '1234':
             os.system('cls')
             print('Voce entrou na aba de cadastramento de produtos:')
             print(produtos)
+            #produto_cadastro ={}
+            produto={}
             produto_cadastro = input("Digite o nome do produto: ")
             while produto_cadastro.isalpha() == False:
                 produto_cadastro = input("Nome invalido digite o nome novamente: ")
@@ -37,9 +39,7 @@ while opcao == '0' or opcao != '1234':
             preco = input(f"Digite o preço de {produto_cadastro}: ")       #replace(",", ".")
             while preco.isdecimal() == False:#preco.isdecimal() == False: #rever logo pela manha
                 preco = input(f"Preço invalido digite novamente um preço para {produto_cadastro}: ")
-            produto=[]
-            produto.append(produto_cadastro)
-            produto.append(preco)
+            produto[produto_cadastro]=preco
             produtos.append(produto)
             print(f'\nProduto {produto_cadastro}, com valor de {preco}, cadastrado com sucesso!!')
             input('\nPressione Enter para voltar ao menu ')
@@ -50,7 +50,11 @@ while opcao == '0' or opcao != '1234':
 
         elif menu_cadastro == '2':
             print('Voce entrou na aba de Listagem de produtos')
-            print('Seu estoque atual é \n',list(produtos))
+            print('Seu estoque atual é \n')
+            contador=0
+            for produto in produtos:
+                print(f'produto {contador}: {produto}')
+                contador+=1
 
             input('\nDigite qualquer coisa para voltar ao menu ')
             opcao == '1'
@@ -60,7 +64,7 @@ while opcao == '0' or opcao != '1234':
             print('Voce entrou na aba de Deleção')
             contador=0
             for produto in produtos:
-                print(f'produto {contador}: ', produto)
+                print(f'produto {contador}: {produto}')
                 contador+=1
                 
                 
