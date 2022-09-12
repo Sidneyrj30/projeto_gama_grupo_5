@@ -1,35 +1,37 @@
 import os
 
-produtos = [["arroz", 15.00], ["feijao",20.00], ["carne", 30.00], ["pao", 15.20]]
+produtos = [{'nome':"arroz", 'preco': 15.00}, {'nome':"feijao",'preco': 20.00}, {'nome':"carne", 'preco': 30.00},
+{'nome':'cebola', 'preco': 5.56}]
 carrinho = []
-
-def menu_vendas():
-    print("="* 20)
-    print("Menu Vendas")
-    print("="* 20)
-
-
-    print('''   
-    1- Adição de produtos ao carrinho
-    2- Remoção de produtos do carrinho
-    3- Finalização da venda do carrinho
-    0- Para sair
-    ''')
-
-menu_vendas()
-
-opcao = input("Escolha uma das opçôes: ")
+opcao = 0
 
 while opcao != "0":
+    os.system('cls') 
+
+    opcao = input('''
+    -------------------------------------------
+            Você entrou no menu vendas
+    -------------------------------------------
+    [1] - Adição de produtos ao carrinho
+    [2] - Remoção de produtos do carrinho
+    [3] - Finalização da venda do carrinho
+    [0] - Para sair
+    Escolha uma das opçôes: ''')   
 
     if opcao == "1":
-        #Variavel em que o usuario vai digitar se quer continuar ou não no programa
+        os.system('cls') 
         terminar_continuar = "1"
+
+        print('''
+        --------------------------------
+                Adicionar produtos        
+        -------------------------------- 
+        ''')
 
         while terminar_continuar != "0":
             print("")
             for item in range(len(produtos)):
-                print(f"{item + 1}-{produtos[item][0]}: R$ {produtos[item][1]:.2f}")
+                print(f"{item + 1}-{produtos[item]['nome']}: R$ {produtos[item]['preco']:.2f}")
 
             produto = int(input("\nEscolha o produto que deseja adicionar no carrinho: "))
             if (produto - 1) in range(len(produtos)):
@@ -38,22 +40,28 @@ while opcao != "0":
 
                 print(f"\nSua lista do carrinho é:")
                 for item in range(len(carrinho)):
-                    print(f"{carrinho[item][0]}")
+                    print(f"{carrinho[item]['nome']}")
 
             else:
                 print("Você digitou um produto inexistente")
             
             print(" ")
-
-            terminar_continuar = input(f"Clique enter para continuar ou 0 para sair: ")
+            terminar_continuar = input(f"Digite 0 para sair ou apenas aperte enter para continuar [0/Enter]: ")
 
     elif opcao == "2":
+        os.system('cls') 
         terminar_continuar = "1"
+
+        print('''
+        --------------------------------
+                Remover produtos        
+        -------------------------------- 
+        ''')
         
         while terminar_continuar != "0":
             print("")
             for item in range(len(carrinho)):
-                print(f"{item + 1}-{carrinho[item][0]}: R${carrinho[item][1]:.2f}")
+                print(f"{item + 1}-{carrinho[item]['nome']}: R${carrinho[item]['preco']:.2f}")
 
             produto_carrinho = int(input("\nEscolha o produto que deseja exluir no carrinho: "))
             if (produto_carrinho - 1) in range(len(carrinho)):
@@ -62,35 +70,28 @@ while opcao != "0":
 
                 print(f"\nSua lista do carrinho é:")
                 for item in range(len(carrinho)):
-                    print(f"{carrinho[item][0]}")
+                    print(f"{carrinho[item]['nome']}")
             else:
                 print("Você digitou um produto inexistente")
             
             print(" ")
-
-            terminar_continuar = input(f"Clique enter para continuar ou 0 para sair: ")
-
+            terminar_continuar = input(f"Digite 0 para sair ou apenas aperte enter para continuar [0/Enter]: ")
 
     elif opcao == "3":
+        os.system('cls') 
         preco = 0
         for item in range(len(carrinho)):
-            preco = preco + carrinho[item][1]
+            preco = preco + carrinho[item]['preco']
 
-        print("="*15)
-        print("Produtos vendidos")
-        print("="*15)
+        print('''
+        --------------------------------
+                Finalizar vendas        
+        -------------------------------- 
+        ''')
 
-        for item in range(len(carrinho)):
-            print(f"Produto: {carrinho[item][0]}, preço: R${carrinho[item][1]:.2f}")
         print(f"Total de {len(carrinho)} produtos por R${preco:.2f}")
 
-        input("Aperte enter para finalizar a venda")
-        #Break é para caso o usuário escolher a opção 3 de finalizar, o loop será encerrado 
+        input("Aperte [enter] para finalizar a venda... ")
         break  
 
-    os.system('cls')    
-
-    menu_vendas()
-
-    opcao = input("Escolha uma das opçôes: ")
-    
+       
