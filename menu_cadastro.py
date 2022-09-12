@@ -1,5 +1,6 @@
 import os
-produtos = [{'banana':15.9},{'maça':15.5}]
+produtos = [{'nome':"arroz", 'preco': 15.00}, {'nome':"feijao",'preco': 20.00}, {'nome':"carne", 'preco': 30.00},
+{'nome':'cebola', 'preco': 5.56}]
 opcao = '1'
 while opcao != '0':
     os.system('cls')
@@ -7,11 +8,12 @@ while opcao != '0':
     --------------------------------------------
         Voce entrou no menu principal:
     --------------------------------------------
-    1 -Cadastro
-    2 -Vendas
-    3 -Relatório
-    4- Sair
-    entre com o numero da solicitação ''')
+    [1] -Cadastro
+    [2] -Vendas
+    [3] -Relatório
+    [0] -Sair
+
+    Entre com o numero da solicitação: ''')
 
 
     while opcao != '0':
@@ -20,10 +22,10 @@ while opcao != '0':
         --------------------------------------------
                 Voce entrou no menu de cadastro:
         --------------------------------------------
-        1 -Cadastramento de produtos
-        2 -Listar produtos cadastrados
-        3 -Deleção de produtos
-        4 -Sair para o menu principal
+        [1] -Cadastramento de produtos
+        [2] -Listar produtos cadastrados
+        [3] -Deleção de produtos
+        [0] -Sair para o menu principal
         entre com o numero da solicitação ''')
 
         if menu_cadastro == '1' :
@@ -52,8 +54,8 @@ while opcao != '0':
             print('Voce entrou na aba de Listagem de produtos')
             print('Seu estoque atual é \n')
             contador=0
-            for produto in produtos:
-                print(f'produto {contador}: {produto}')
+            for item in range(len(produtos)):
+                print(f"produto {contador}: {produtos[item]['nome']}")
                 contador+=1
 
             input('\nDigite qualquer coisa para voltar ao menu ')
