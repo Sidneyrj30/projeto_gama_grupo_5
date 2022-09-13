@@ -1,3 +1,4 @@
+
 import os
 produtos = [{'nome':"arroz", 'preco': 15.00}, {'nome':"feijao",'preco': 20.00}, {'nome':"carne", 'preco': 30.00},
 {'nome':'cebola', 'preco': 5.56}]
