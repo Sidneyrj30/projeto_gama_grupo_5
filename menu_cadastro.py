@@ -1,48 +1,85 @@
-
 import os
-import time
-menu = 0
-produtos = [['tomate',25.9] , ['banana',5.9] , ['repolho',2.9]]
-produto = []
-while menu == 0 :
+produtos = [{'nome':"arroz", 'preco': 15.00}, {'nome':"feijao",'preco': 20.00}, {'nome':"carne", 'preco': 30.00},
+{'nome':'cebola', 'preco': 5.56}]
+opcao = '0'
+while opcao != '4':
     os.system('cls')
-    menu=int(input('''
-    1 -Cadastro
-    2 -Vendas
-    3 -Relatório
-    4- Sair
-    entre com o numero da solicitação '''))
-    while menu == 1:
+    print('''
+    [1] - Cadastro
+    [2] - Vendas
+    [3] - Relatório
+    [0] - Sair ''')
+    opcao = (input('Digite onde deseja ir.'))
+
+
+    while opcao == '1':
         os.system('cls')
-        menu_cadastro=int(input('''
+        menu_cadastro=input('''
         --------------------------------------------
                 Voce entrou no menu de cadastro:
         --------------------------------------------
-        1 -Cadastramento de produtos
-        2 -Listar produtos cadastrados
-        3 -Deleção de produtos
-        4 -Sair para o menu principal
-        entre com o numero da solicitação '''))
+        [1] -Cadastramento de produtos
+        [2] -Listar produtos cadastrados
+        [3] -Deleção de produtos
+        [0] -Sair para o menu principal
+        entre com o numero da solicitação ''')
 
-        if menu_cadastro == 1:
+        if menu_cadastro == '1' :
             os.system('cls')
             print('Voce entrou na aba de cadastramento de produtos:')
+            #produto_cadastro ={}
+            produto={}
+            produto_cadastro = input("Digite o nome do produto: ")
+            while produto_cadastro.isalpha() == False:
+                produto_cadastro = input("Nome invalido digite o nome novamente: ")
+            os.system('cls')
+            preco = input(f"Digite o preço de {produto_cadastro}: ")       #replace(",", ".")
+            #while preco.isdecimal() == False: #rever logo pela manha
+            #    preco = input(f"Preço invalido digite novamente um preço para {produto_cadastro}: ")
+            produto['nome']=produto_cadastro
+            produto['preco']=float(preco)
+            produtos.append(produto)
             print(produtos)
-            produto_cadastro = input("Digite o produto: ")
-            preco = input(f"Digite o preço de {produto_cadastro}: ")
-            produto.append = [produto_cadastro , preco]
+            print(f'\nProduto {produto_cadastro}, com valor de {preco}, cadastrado com sucesso!!')
+            input('\nPressione Enter para voltar ao menu ')
+            opcao == '1'
+       
+            
 
-        elif menu_cadastro == 2:
-            print('Voce entrou na aba de cListagem de produtos')
-            print('Seu estoque atual é \n',list(produtos))
-            time.sleep(20)
 
-        elif menu_cadastro == 3:
+        elif menu_cadastro == '2':
+            os.system('cls')
+            print('Voce entrou na aba de Listagem de produtos')
+            print('Seu estoque atual é \n')
+            contador=1
+            for item in range(len(produtos)):
+                print(f"produto {contador}: {produtos[item]['nome']}")
+                contador+=1
+
+            input('\nDigite qualquer coisa para voltar ao menu ')
+            opcao == '1'
+
+        elif menu_cadastro == '3':
             os.system('cls')
             print('Voce entrou na aba de Deleção')
-            produto = input("Digite o produto que deseja remover: ")
-            produtos.pop(produto)
-            print('Seu estoque atual é \n',list(produtos))
+            contador=1
+            for item in range(len(produtos)):
+                print(f"produto {contador}: {produtos[item]['nome']}")
+                contador+=1
+                
+                
+            print('qual produto deseja remover digite o numero correspondente:\n')
+            numero = int(input("Digite o numero do produto da lista "))
+            numero=numero-1
+            produtos.pop(numero)
+            print('Seu estoque atual é \n')
+            contador=1
+            for item in range(len(produtos)):
+                print(f"produto {contador}: {produtos[item]['nome']}")
+                contador+=1
+            input('\nDigite qualquer coisa para voltar ao menu ')
+            opcao == '1'
+
         else:
             os.system('cls')
-            menu=0
+            opcao='0'
