@@ -1,17 +1,16 @@
 def linha():
-    print('-'*70)
-
-
-linha()
-print(               "  MENU DE NAVEGAÇÃO "              )
-linha()
+    print('-'*40)
 opcao = 0
-while opcao != "4":
+while opcao != "0":
+    linha()
+    print(               "           MENU DE NAVEGAÇÃO "              )
+    linha()
     print('''
     [1] - Cadastro
     [2] - Vendas
     [3] - Relatório
-    [4] - Sair ''')
+    [0] - Sair ''')
+
     opcao = (input('Digite onde deseja ir.'))
     if opcao == "1":
         print('Você entrou no cadastro de produtos')
@@ -22,14 +21,9 @@ while opcao != "4":
     elif opcao == "3":
         print('Você entrou no relatório')
 
-    elif opcao == "4":
+    elif opcao == "0":
         print('Você está saindo')
 
     else:
         print('Retornando ao início')
-        print('=-=' * 10)
-
-
-
-
-
+        print('-' * 25)
