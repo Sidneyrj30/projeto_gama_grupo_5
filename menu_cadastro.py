@@ -11,8 +11,7 @@ while opcao != '4':
     [0] - Sair ''')
     opcao = (input('Digite onde deseja ir.'))
 
-
-    while opcao == '1':
+    if opcao == '1':
         os.system('cls')
         menu_cadastro=input('''
         --------------------------------------------
@@ -82,4 +81,3 @@ while opcao != '4':
 
         else:
             os.system('cls')
-            opcao='0'
