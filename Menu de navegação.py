@@ -27,8 +27,3 @@ while opcao != "0":
     else:
         print('Retornando ao início')
         print('-' * 25)
-
-
-
-
-
