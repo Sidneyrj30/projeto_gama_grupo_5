@@ -26,7 +26,7 @@ while opcao != "0":
 
     else:
         print('Retornando ao início')
-        print('-' * 20)
+        print('-' * 25 )
 
 
 
