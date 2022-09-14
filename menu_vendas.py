@@ -14,6 +14,7 @@ def menu_vendas(produtos, carrinho, relatorio):
         -------------------------------------------
                 Você entrou no menu vendas
         -------------------------------------------
+        
         [1] - Adição de produtos ao carrinho
         [2] - Remoção de produtos do carrinho
         [3] - Finalização da venda do carrinho
@@ -61,9 +62,9 @@ def menu_vendas(produtos, carrinho, relatorio):
             os.system('cls')
 
             print('''
-            --------------------------------
-                    Remover produtos        
-            -------------------------------- 
+            ------------------------------------------
+                    Remover produtos do carrinho       
+            ------------------------------------------ 
             ''')
             
             print("")
@@ -83,8 +84,8 @@ def menu_vendas(produtos, carrinho, relatorio):
                         print(f"\nSua lista do carrinho é:")
                         for item in range(len(carrinho)):
                             print(f"{carrinho[item]['nome']}")
-                    elif len(produtos) == 0:
-                        print("Não tem mais produtos")
+                    elif len(carrinho) == 0:
+                        print("Não tem produtos no carrinho")
                         valor_valido = True
                     else:
                         print("Você digitou um produto inexistente")

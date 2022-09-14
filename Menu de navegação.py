@@ -11,7 +11,7 @@ while opcao != "0":
     [3] - Relatório
     [0] - Sair ''')
 
-    opcao = (input('Digite onde deseja ir.'))
+    opcao = (input('Escolha uma das opçôes: '))
     if opcao == "1":
         print('Você entrou no cadastro de produtos')
 
