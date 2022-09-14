@@ -22,7 +22,7 @@ while opcao != '4':
 
     while opcao == '1':
         os.system('cls')
-        menu_cadastro=input('''
+        menu_cadastro = input('''
         --------------------------------------------
                 Voce entrou no menu de cadastro:
         --------------------------------------------
@@ -38,18 +38,18 @@ while opcao != '4':
             os.system('cls')
             print('Voce entrou na aba de cadastramento de produtos:')
             #produto_cadastro ={}
-            produto={}
+            produto = {}
             produto_cadastro = input("Digite o nome do produto: ")
             while produto_cadastro.isalpha() == False:
                 produto_cadastro = input("Nome invalido digite o nome novamente: ")
             os.system('cls')
             preco = input(f"Digite o preço de {produto_cadastro}: ")         #replace(",", ".")
-            while preco.replace('.','',1).isdigit()==False:                  #preco.isdecimal() == False: #rever logo pela manha
+            while preco.replace('.','',1).isdigit() == False:                  #preco.isdecimal() == False: #rever logo pela manha
                 preco = input(f"Preço invalido digite novamente um preço para {produto_cadastro}: ")
                                                                              #while preco.isdecimal() == False: #rever logo pela manha
                                                                              #    preco = input(f"Preço invalido digite novamente um preço para {produto_cadastro}: ")
-            produto['nome']=produto_cadastro
-            produto['preco']=float(preco)
+            produto['nome'] = produto_cadastro
+            produto['preco'] = float(preco)
             produtos.append(produto)
             #print(produtos)
             print(f'\nProduto {produto_cadastro}, com valor de {preco}, cadastrado com sucesso!!')
