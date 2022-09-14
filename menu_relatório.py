@@ -13,6 +13,7 @@ print('''
         ''')
 
 for item in range(len(relatorio)):
-    print(f"Produto: {relatorio[item]['preco']}")
+    print(f"Produto: {relatorio[item]['nome']} preço: R$ {relatorio[item]['preco']}")
 
-print(f" Valor Total: R${preco}" )   
+print(f"Total de Produtos: {len(relatorio)} Unidades Valor Total: R${preco}" ) 
+input("Aperte enter para continuar: ")  
