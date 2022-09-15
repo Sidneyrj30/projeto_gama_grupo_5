@@ -39,31 +39,36 @@ def menu_cadastro(produtos):
 
         elif opcao == '2':
             os.system('cls')
-            print('Voce entrou na aba de Listagem de produtos')
-            print('Seu estoque atual é \n')
-            contador=1
-            for item in range(len(produtos)):
-                print(f"produto {contador}: {produtos[item]['nome']} R$ {produtos[item]['preco']:.2f}")
-                contador+=1
+            if len(produtos) == 0:
+                input('Lista vazia de Enter para voltar ao menu')
+            else:
+                print('Voce entrou na aba de Listagem de produtos')
+                print('Seu estoque atual é \n')
+                contador=1
+                for item in range(len(produtos)):
+                    print(f"produto {contador}: {produtos[item]['nome']} R$ {produtos[item]['preco']:.2f}")
+                    contador+=1
 
-            input('\nDigite qualquer coisa para voltar ao menu ')
+                input('\nDigite qualquer coisa para voltar ao menu ')
 
         elif opcao == '3':
             os.system('cls')
-            print('Voce entrou na aba de Deleção')
-            contador=1
-            for item in range(len(produtos)):
-                print(f"produto {contador}: {produtos[item]['nome']}")
-                contador+=1
-                
-                
-            print('qual produto deseja remover digite o numero correspondente:\n')
-            numero = int(input("Digite o numero do produto da lista "))
-            numero = numero-1
-            produtos.pop(numero)
-            print('Seu estoque atual é \n')
-            contador = 1
-            for item in range(len(produtos)):
-                print(f"produto {contador}: {produtos[item]['nome']}")
-                contador +=1
-            input('\nDigite qualquer coisa para voltar ao menu ')
+            if len(produtos) == 0:
+                input('Lista vazia de Enter para voltar ao menu')
+            else:
+                print('Voce entrou na aba de Deleção')
+                contador=1
+                for item in range(len(produtos)):
+                    print(f"produto {contador}: {produtos[item]['nome']}")
+                    contador+=1
+                                       
+                print('qual produto deseja remover digite o numero correspondente:\n')
+                numero = int(input("Digite o numero do produto da lista "))
+                numero = numero-1
+                produtos.pop(numero)
+                print('Seu estoque atual é \n')
+                contador = 1
+                for item in range(len(produtos)):
+                    print(f"produto {contador}: {produtos[item]['nome']}")
+                    contador +=1
+                input('\nDigite qualquer coisa para voltar ao menu ')
