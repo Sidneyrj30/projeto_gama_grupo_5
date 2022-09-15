@@ -11,9 +11,9 @@ def menu_vendas(produtos, carrinho, relatorio):
         os.system('cls')
 
         opcao = input('''
-        -------------------------------------------
-                Você entrou no menu vendas
-        -------------------------------------------
+        ---------------------------------------------
+                Você entrou no menu de vendas
+        ---------------------------------------------
         
         [1] - Adição de produtos ao carrinho
         [2] - Remoção de produtos do carrinho

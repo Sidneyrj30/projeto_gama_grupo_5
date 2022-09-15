@@ -10,9 +10,9 @@ def menu_relatorio(relatorio):
         preco = preco + relatorio[item]['preco']
 
     print('''
-    --------------------------------
-            Relatório de Vendas        
-    -------------------------------- 
+    -------------------------------------------------
+            Você entrou no relatório de Vendas        
+    ------------------------------------------------- 
             ''')
 
     for item in range(len(relatorio)):

@@ -7,6 +7,8 @@ produtos = []
 carrinho = []
 relatorio = []
 
+os.system('cls')
+
 print('''
 =------------------------------------------=
 |        Seja bem-vindo à Orgânicos        |
@@ -15,22 +17,21 @@ print('''
 
 input("Aperte enter para continuar... ")
 
-def linha():
-    print('-'*40)
 opcao = 1
 while opcao != "0":
     os.system('cls')
-    linha()
-    print(               "           MENU DE NAVEGAÇÃO "              )
-    linha()
-    print('''
+
+    opcao = input('''
+    --------------------------------------------
+                Menu de navegação
+    --------------------------------------------
+    
     [1] - Cadastro
     [2] - Vendas
     [3] - Relatório
     [0] - Sair 
-     ''')
 
-    opcao = input("Escolha uma das opçôes: ")
+    Escolha uma das opções:  ''')
 
     if opcao == "1":
         menu_cadastro(produtos)
@@ -44,6 +45,3 @@ while opcao != "0":
     elif opcao == "0":
         print('Você está saindo')
 
-    else:
-        print('Retornando ao início')
-        print('-' * 25)

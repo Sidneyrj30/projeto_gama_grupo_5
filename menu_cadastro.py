@@ -5,7 +5,7 @@ def menu_cadastro(produtos):
     os.system('cls')
     menu_cadastro = input('''
     --------------------------------------------
-            Voce entrou no menu de cadastro:
+            Voce entrou no menu de cadastro
     --------------------------------------------
     
     [1] -Cadastramento de produtos
@@ -15,10 +15,9 @@ def menu_cadastro(produtos):
 
     Escolha uma das opções:  ''')
 
-    if menu_cadastro == '1' :
+    if menu_cadastro == '1':
         os.system('cls')
         print('Voce entrou na aba de cadastramento de produtos:')
-        #produto_cadastro ={}
         produto = {}
         produto_cadastro = input("Digite o nome do produto: ")
         while produto_cadastro.isalpha() == False:
