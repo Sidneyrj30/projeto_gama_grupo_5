@@ -50,7 +50,7 @@ def menu_cadastro(produtos):
                     contador+=1
 
                 input('\nDigite qualquer coisa para voltar ao menu ')
-
+ 
         elif opcao == '3':
             os.system('cls')
             if len(produtos) == 0:
