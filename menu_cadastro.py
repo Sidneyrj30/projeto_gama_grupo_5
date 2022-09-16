@@ -2,6 +2,14 @@ import os
 produtos = []
 
 def menu_cadastro(produtos):
+
+    def isfloat(num):
+        try:
+            float(num)
+            return True
+        except ValueError:
+            return False
+
     opcao = 0
     while opcao != '0':
         os.system('cls')
@@ -25,9 +33,14 @@ def menu_cadastro(produtos):
             while produto_cadastro.isalpha() == False:
                 produto_cadastro = input("Nome invalido digite o nome novamente: ")
             os.system('cls')
-            preco = input(f"Digite o preço de {produto_cadastro}: ")     
-            while preco.replace('.','',1).isdigit() == False:                
+            preco = input(f"Digite o preço de {produto_cadastro}: ")
+            preco = preco.replace(",", ".")
+            while isfloat(preco) == False:
                 preco = input(f"Preço invalido digite novamente um preço para {produto_cadastro}: ")
+                preco = preco.replace(",", ".")
+            #Código anterior
+            # while preco.replace('.','',1).isdigit() == False:                
+            #     preco = input(f"Preço invalido digite novamente um preço para {produto_cadastro}: ")
 
             preco = float(preco)
             produto['nome'] = produto_cadastro
