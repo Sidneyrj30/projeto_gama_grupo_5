@@ -3,7 +3,8 @@ from menu_cadastro import menu_cadastro
 from menu_vendas import menu_vendas
 from menu_relatorio import menu_relatorio
 
-produtos = []
+produtos = [{'nome':"arroz", 'preco': 15.00}, {'nome':"feijao",'preco': 20.00}, {'nome':"carne", 'preco': 30.00},
+{'nome':'cebola', 'preco': 5.56}]
 carrinho = []
 relatorio = []
 
@@ -11,7 +12,7 @@ os.system('cls')
 
 print('''
 =------------------------------------------=
-|        Seja bem-vindo à Orgânicos        |
+|        Seja bem-vindo ao Orgânicos        |
 =------------------------------------------=
 ''')
 

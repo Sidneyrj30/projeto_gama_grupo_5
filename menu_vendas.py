@@ -100,21 +100,25 @@ def menu_vendas(produtos, carrinho, relatorio):
 
         elif opcao == "3":
             os.system('cls') 
-            preco = 0
-            for item in range(len(carrinho)):
-                preco = preco + carrinho[item]['preco']
+            if len(carrinho) == 0:
+                print("Não tem produtos no carrinho para finalizar a venda")
+                input("Aperte enter para continuar... ")
+            else:
+                preco = 0
+                for item in range(len(carrinho)):
+                    preco = preco + carrinho[item]['preco']
 
-            print('''
-            --------------------------------
-                    Finalizar vendas        
-            -------------------------------- 
-            ''')
-            
-            print(f"Total de produtos: {len(carrinho)}  por R${preco:.2f}")           
+                print('''
+                --------------------------------
+                        Finalizar vendas        
+                -------------------------------- 
+                ''')
+                
+                print(f"Total de produtos: {len(carrinho)}  por R${preco:.2f}")           
 
-            input("Aperte [enter] para finalizar a venda... ")
-            relatorio.extend(carrinho)
-            carrinho.clear()
-            break  
+                input("Aperte enter para finalizar a venda... ")
+                relatorio.extend(carrinho.copy())#mudança
+                carrinho.clear()
+                break  
 
        
